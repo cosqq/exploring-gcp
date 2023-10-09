@@ -10,7 +10,7 @@ The following are the folders present and some information about what I will exp
 
 - Big Query Partitions
 - IAM using YAML 
-- Cloud Build for CI/CD
+- Cloud Build for CI/CD ✅
 - GKE and Airflow (Cloud Composer Wrapper)
 
 
