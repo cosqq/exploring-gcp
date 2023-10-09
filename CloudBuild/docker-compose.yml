@@ -1,0 +1,7 @@
+version: '3'
+services:
+  scrapbot:
+     image: us-east1-docker.pkg.dev/MyFirstProject/helloworld-repo/helloworld-service
+     build:
+       context: .
+       dockerfile: ./hellworldapp/docker/Dockerfile

@@ -1,0 +1,32 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: ['-m','cp','-r','gs://application_config/central_appconfig.config', './hellworldapp/config/']
+  - name: "docker/compose:1.28.0"
+    args: ['-f','./docker-compose.yml', 'build']
+  - name: "gcr.io/cloud-builders/docker"
+    args: ['push', '${_ARTIFACT_PACK}/${_PROJECT_ID}/${_ARTIFACT_REGISTRY}/{_IMG_NAME}']
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - '${_SERVICE_NAME}'
+      - '--image'
+      - '${_ARTIFACT_PACK}/${_PROJECT_ID}/${_ARTIFACT_REGISTRY}/{_IMG_NAME}'
+      - '--region'
+      - 'us-east1'
+      - '--cpu'
+      - '1'
+      - '--memory'
+      - '1Gi'
+      - '--task-timeout'
+      - '600s'
+      - '--max-retries'
+      - '1'
+images: 
+    - '${_ARTIFACT_PACK}/${_PROJECT_ID}/${_ARTIFACT_REGISTRY}/{_IMG_NAME}'
+substitutions:
+  _PROJECT_ID: "MyFirstProject"
+  _ARTIFACT_PACK: "us-east1-docker.pkg.dev"
+  _ARTIFACT_REGISTRY: "helloworld-repo"
+  _SERVICE_NAME: "helloworld-service"
+  _IMG_NAME: "helloworld"
