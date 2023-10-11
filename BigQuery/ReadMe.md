@@ -4,6 +4,8 @@ Introducting the use of Bigquery for analytical workloads. Below is a summarized
 
 # Partitions 
 
+\<In Progress>
+
 # Arrays and Structs 
 
 Arrays and Structs are one of the concepts I came across when exploring the uses of Big Query. It was introduced as sorta like an in between concept of normalization (slower with joins but higher integrity) and denormalization (faster without joins lower integrity). 
