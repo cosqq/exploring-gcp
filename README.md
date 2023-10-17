@@ -8,7 +8,8 @@ This is one of the repositories where I would document my learning as a GCP Clou
 
 The following are the folders present and some information about what I will explore :
 
-- Big Query Partitions
+- Big Query Partitions ✅
+- Big Query Arrays and Struct ✅
 - IAM using YAML 
 - Cloud Build for CI/CD ✅
 - GKE and Airflow (Cloud Composer Wrapper)
