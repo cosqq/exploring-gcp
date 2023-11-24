@@ -13,5 +13,5 @@ The following are the folders present and some information about what I will exp
 - IAM using YAML 
 - Cloud Build for CI/CD ✅
 - GKE and Airflow (Cloud Composer Wrapper)
-
+- Search & Conversation with JSONL and API Request formatting (Vertex AI) ✅
 
